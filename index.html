@@ -1,1 +1,176 @@
-<p> Hello word </p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <embed src="n.flac"  hidden="true" autostart="true" loop="true" />
+        <style>
+        body{
+            background:url(img/bj.jpg)  repeat -300px 0;
+               background-size:cover;
+               background-attachment:fixed;
+            /*width: 500px;*/
+            /*height: 500px;*/
+
+
+        }
+        /*最外层样式*/
+            .wrap{
+                width: 2500px;
+                height:300px;
+                margin: 300px auto;
+                /*border: 1px solid red;*/
+                /*background: red;*/
+                position: relative;
+            }
+            /*包裹所有容器的样式*/
+            .cube{
+                width: 200px;
+                height: 200px;
+                /*perspective: 500px;*/
+                /*保持3D效果*/
+                margin: 0 auto;
+                transform-style: preserve-3d;
+                transform: rotateX(-40deg) rotateY(-80deg);
+                animation: rotate linear 10s infinite;
+
+            }
+                @-webkit-keyframes rotate{
+                from{
+                    transform: rotateX(0deg) rotateY(0deg);
+                }
+                to{
+                    transform: rotateX(360deg) rotateY(360deg);
+                }
+            }
+            .cube div{
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                opacity: 0.8;
+                /*0.4秒*/
+                transition: all 0.4s;
+            }
+            /*定义所有图片的样式*/
+            .pic{
+                width: 200px;
+                height: 200px;
+            }
+            .cube .Out_Left{
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+            .cube .Out_Right{
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            .cube .Out_Top{
+                transform: rotateX(90deg) translateZ(100px);
+            }
+            .cube .Out_Bottom{
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+            .cube .Out_Front{
+                transform: rotateY(0deg) translateZ(100px);
+            }
+            .cube .Out_Back{
+                transform: translateZ(-100px) rotateY(180deg);
+            }
+
+            /*定义小正方体的样式*/
+            .cube span{
+                display: block;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+
+             .cube .in_pic{
+                width: 100px;
+                height: 100px;
+            }
+
+            .cube .In_Left{
+                transform: rotateY(-90deg) translateZ(50px);
+            }
+            .cube .In_Right{
+                transform: rotateY(90deg) translateZ(50PX);
+            }
+            .cube .In_Top{
+                transform: rotateX(90deg) translateZ(50px);
+            }
+            .cube .In_Bottom{
+                transform: rotateX(-90deg) translateZ(50px);
+            }
+            .cube .In_Front{
+                transform: rotateY(0deg) translateZ(50px);
+            }
+            .cube .In_Back{
+                transform: translateZ(-50PX) rotateY(180deg);
+            }
+            /*鼠标移入后的样式*/
+            .cube:hover .Out_Left{
+                transform: rotateY(90deg) translateZ(-200px);
+            }
+            .cube:hover .Out_Right{
+                transform: rotateY(-90deg) translateZ(-200PX);
+            }
+            .cube:hover .Out_Top{
+                transform: rotateX(-90deg) translateZ(-200px);
+            }
+            .cube:hover .Out_Bottom{
+                transform: rotateX(90deg) translateZ(-200px);
+            }
+            .cube:hover .Out_Front{
+                transform: translateZ(200PX) ;
+            }
+            .cube:hover .Out_Back{
+                transform: translateZ(-200PX) ;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="cube">
+                <!--外面前面的照片-->
+                <div class="Out_Front">
+                    <img src="img/1.jpg" class="pic"/>
+                </div>
+                <div class="Out_Back">
+                    <img src="img/2.jpg"  class="pic"/>
+                </div>
+                <div class="Out_Top">
+                    <img src="img/3.jpg"  class="pic"/>
+                </div>
+                <div class="Out_Bottom">
+                    <img src="img/4.jpg"  class="pic"/>
+                </div>
+                <div class="Out_Left">
+                    <img src="img/5.jpg"  class="pic"/>
+                </div>
+                <div class="Out_Right">
+                    <img src="img/6.jpg"  class="pic"/>
+                </div>
+
+                <span class="In_Front">
+                    <img src="img/7.jpg" class="in_pic"/>
+                </span>
+                <span class="In_Back">
+                    <img src="img/8.jpg" class="in_pic"/>
+                </span>
+                <span class="In_Top">
+                    <img src="img/9.jpg" class="in_pic"/>
+                </span>
+                <span class="In_Bottom">
+                    <img src="img/10.jpg" class="in_pic"/>
+                </span>
+                <span  class="In_Left">
+                    <img src="img/11.jpg"  class="in_pic"/>
+                </span>
+                <span class="In_Right">
+                    <img src="img/12.jpg" class="in_pic"/>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
